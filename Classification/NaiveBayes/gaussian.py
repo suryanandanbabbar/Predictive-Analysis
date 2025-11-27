@@ -31,3 +31,12 @@ y_pred = model.predict(X_test)
 print("Accuracy: ", accuracy_score(y_test, y_pred))
 print("\nClassification Report:\n", classification_report(y_test, y_pred))
 print("\nConfusion Matrix:\n", confusion_matrix(y_test, y_pred))
+
+# Heatmap
+cm = confusion_matrix(y_test, y_pred)
+plt.figure(figsize=(5,4))
+sns.heatmap(cm, annot=True, fmt="d", cmap="Blues")
+plt.title("GaussianNB Confusion Matrix")
+plt.xlabel("Predicted Label")
+plt.ylabel("True Label")
+plt.show()
