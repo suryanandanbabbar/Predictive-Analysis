@@ -40,3 +40,14 @@ plt.xlabel("BMI (Standardized)")
 plt.ylabel("Disease Progression")
 plt.title("Polynomial Regression (Degree 2)")
 plt.show()
+
+# Evaluation
+from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
+
+r2 = r2_score(y_test, y_pred)
+mse = mean_squared_error(y_test, y_pred)
+mae = mean_absolute_error(y_test, y_pred)
+
+print(f"R² Score: {r2:.4f}")
+print(f"Mean Squared Error: {mse:.4f}")
+print(f"Mean Absolute Error: {mae:.4f}")
